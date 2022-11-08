@@ -1,0 +1,49 @@
+header  {
+    height: 70px;
+    background-image: linear-gradient(to right, rgb(36, 24, 141) , rgb(54, 13, 121));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: roboto;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.mainbox {
+    
+}
+
+.leftbox {
+
+}
+
+.searchbox {
+    display: flex;
+}
+
+.rightbox {
+    height: 500px;
+}
+
+.main-card {
+    border-style: solid;
+    border-radius: 25px;
+    padding: 20px;
+    height: 300px;
+}
+
+.five-days {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+card {
+    border-style: solid;
+    border-radius: 25px;
+    padding: 20px;
+    width: 250px;
+    height: 300px;
+}
