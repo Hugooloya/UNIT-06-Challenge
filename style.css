@@ -1,6 +1,9 @@
-header  {
+body {
+    cursor: default;
+}
+header {
     height: 70px;
-    background-image: linear-gradient(to right, rgb(36, 24, 141) , rgb(54, 13, 121));
+    background-image: linear-gradient(to right, rgb(36, 24, 141), rgb(54, 13, 121));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,16 +14,63 @@ header  {
     margin-bottom: 30px;
 }
 
-.mainbox {
-    
+.mainbox {}
+
+.leftbox {}
+
+.textEl {
+    font-size: 32px;
+    font-family: roboto;
+    font-weight: 500;
 }
 
-.leftbox {
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: roboto;
+    font-size: 20px;
+    border-radius: 5px;
+    border-width: 1px;
+}
 
+.searchBtn {
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    font-family: roboto;
+    font-size: 20px;
+    color: white;
+    background-color: #4685ce;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 .searchbox {
     display: flex;
+    margin-bottom: 15px;
+}
+
+.search-history {
+    border-top: 1px solid;
+    margin-top: 15px;
+}
+
+.pastBtn {
+    /* display: flex; */
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    font-family: roboto;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    background-color: #bbbbbb;
+    border-radius: 5px;
+    border: none;
+    margin: 5px 0px 5px 0px;
+    cursor: pointer;
 }
 
 .rightbox {
@@ -41,9 +91,10 @@ header  {
 }
 
 card {
-    border-style: solid;
     border-radius: 25px;
     padding: 20px;
     width: 250px;
-    height: 300px;
+    height: 200px;
+    background-color: rgb(40, 40, 53);
+    color: white;
 }
