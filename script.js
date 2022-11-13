@@ -17,7 +17,7 @@ const weather = {
     )
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
-      console.log(this);
+    console.log(this);
   },
 
   // Function to create variables and prints data in weather cards
@@ -63,14 +63,14 @@ const weather = {
   // Function to update what is typed in input element
   search() {
     this.fetchWeather(searchBar.value);
-    var  cityText = searchBar.value.trim();
-  if (cityText === "") {
-    return;
-  }
-  cities.push(cityText);
-  searchBar.value = "";
+    var cityText = searchBar.value.trim();
+    if (cityText === "") {
+      return;
+    }
+    cities.push(cityText);
+    searchBar.value = "";
   },
-  
+
   // Function renders items in a todo list as <li> elements
   renderCities() {
     citiesList.innerHTML = "";
@@ -91,7 +91,7 @@ const weather = {
       cities = storedCities;
     }
     this.renderCities();
-  },  
+  },
 
   // Function to store searched city in Local Storage
   saveLastCity() {
@@ -118,10 +118,7 @@ citiesList.addEventListener("click", function (event) {
         "&cnt=80&appid=6e488f3637f1e65cabedb26e8fc39da1&units=imperial"
     )
       .then((response) => response.json())
-      .then((data) => weather.displayWeather(data));  
-    // Store updated todos in localStorage, re-render the list
-    // weather.saveLastCity();
-    // weather.renderCities();
+      .then((data) => weather.displayWeather(data));
   }
 });
 
