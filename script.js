@@ -17,6 +17,7 @@ const weather = {
     )
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
+      console.log(this);
   },
 
   // Function to create variables and prints data in weather cards
@@ -72,18 +73,20 @@ const weather = {
   
   // Function renders items in a todo list as <li> elements
   renderCities() {
+    citiesList.innerHTML = "";
     for (var c = 0; c < cities.length; c++) {
       const cita = cities[c];
       const button = document.createElement("button");
       button.classList.add("pastBtn");
       button.textContent = cita;
+      button.setAttribute("data-index", c);
       citiesList.appendChild(button);
     }
   },
 
   // Function that loads when page is load
   init() {
-    const storedCities = JSON.parse(localStorage.getItem("todos"));
+    const storedCities = JSON.parse(localStorage.getItem("cities"));
     if (storedCities !== null) {
       cities = storedCities;
     }
@@ -102,6 +105,24 @@ searchBtn.addEventListener("click", (event) => {
   weather.search();
   weather.saveLastCity();
   weather.renderCities();
+});
+
+// Add click event to citiesList element
+citiesList.addEventListener("click", function (event) {
+  const element = event.target;
+  if (element.matches("button") === true) {
+    let index = element.innerHTML;
+    fetch(
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
+        index +
+        "&cnt=80&appid=6e488f3637f1e65cabedb26e8fc39da1&units=imperial"
+    )
+      .then((response) => response.json())
+      .then((data) => weather.displayWeather(data));  
+    // Store updated todos in localStorage, re-render the list
+    // weather.saveLastCity();
+    // weather.renderCities();
+  }
 });
 
 weather.init();
